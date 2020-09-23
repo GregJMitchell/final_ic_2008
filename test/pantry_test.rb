@@ -48,6 +48,12 @@ class PantryTest < Minitest::Test
     recipe2.add_ingredient(ingredient4, 1)
     pantry.restock(ingredient1, 5)
     pantry.restock(ingredient1, 10)
+    
     assert_equal false, pantry.enough_ingredients_for?(recipe1)
+
+    pantry.restock(ingredient2, 7)
+    pantry.restock(ingredient2, 1)
+    
+    assert_equal true, pantry.enough_ingredients_for?(recipe1)
   end
 end
