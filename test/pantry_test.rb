@@ -9,4 +9,10 @@ class PantryTest < Minitest::Test
 
     assert_instance_of Pantry, pantry
   end
+
+  def test_it_has_readable_attributes
+    pantry = Pantry.new
+
+    asser_equal ({}), pantry.stock
+  end
 end
