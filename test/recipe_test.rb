@@ -16,6 +16,7 @@ class RecipeTest < Minitest::Test
 
     assert_equal 'Mac and Cheese', recipe1.name
     assert_equal ({}), recipe1.ingredients_required
+    assert_equal [], recipe1.ingredients
   end
 
   def test_it_can_add_ingredients
