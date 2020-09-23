@@ -1,3 +1,5 @@
+require 'date'
+
 class CookBook
   attr_reader :recipes
   def initialize
@@ -12,5 +14,9 @@ class CookBook
     @recipes.max_by do |recipe|
       recipe.total_calories
     end
+  end
+
+  def date
+    Time.now.strftime("%m%d%y")
   end
 end
