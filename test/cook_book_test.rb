@@ -4,6 +4,7 @@ require './lib/ingredient'
 require './lib/pantry'
 require './lib/recipe'
 require './lib/cook_book'
+require 'date'
 
 class CookBookTest < Minitest::Test
   def test_it_exists
@@ -49,8 +50,9 @@ class CookBookTest < Minitest::Test
 
   def test_it_can_get_date
     cookbook = CookBook.new
+    today = Time.now.strftime("%m%d%y")
 
-    assert_equal '04-22-2020', cookbook.date
+    assert_equal today, cookbook.date
   end
 
   def test_it_can_get_book_summary
